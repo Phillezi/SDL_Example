@@ -65,7 +65,7 @@ void loop(CTX *pCTX) {
     while(SDL_TRUE) {
         render(pCTX);
         SDL_Event event;
-        if(SDL_WaitEventTimeout(&event, /*pCTX->pConfig->fps/1000*/ 500)) { // use fps/1000 to get the desired fps, otherwise it will only draw once there is an event or the time runs out.
+        if(SDL_WaitEventTimeout(&event, 1000/pCTX->pConfig->fps)) { // this updates whenever it needs to or when the timer runs out (keeping the desired fps). For efficiency set th timeout to something like 500ms
             if(event.type == SDL_QUIT) {
                 pCTX->state = QUITTING;
                 return;
