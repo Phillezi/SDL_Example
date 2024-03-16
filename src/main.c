@@ -1,13 +1,10 @@
-#include <stdio.h>
-#include "include/header.h"
+#include "include/ctx.h"
 
-/**
- * @brief Example main to test if the linking of object files works as intended.
- * 
- * @return int 0 on success.
- */
-int main() {
-    printf("Hello World! %d\n", hFunc(2, 7));
+int main(int argc, char **argv) {
+    CTX *pCTX = newCTX();
     
+    loop(pCTX);
+
+    destroyCTX(pCTX);
     return 0;
 }

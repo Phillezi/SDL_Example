@@ -3,7 +3,7 @@
 # Desc:		A simple Makefile template to build c programs with gcc
 
 CC=gcc
-CFLAGS=-Wall -Wpedantic# Add your library specific flags here
+CFLAGS=-Wall -Wpedantic -lSDL2main -lSDL2 -lSDL2_ttf# Add your library specific flags here
 DEBUG_CFLAGS=-g
 
 SRC_DIR=src
