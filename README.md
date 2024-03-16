@@ -1,43 +1,11 @@
-# Simple Makefile Template for C Projects
+# SDL2 Example using my [C Makefile Template](https://github.com/Phillezi/C_Makefile_Template)
 
-This is a straightforward Makefile template designed for building C projects using GCC.
-It is designed to keep things neat by putting object files in a out directory and the finished executable in the root directory.
+## Prerequisites
 
-## Installation
-
-You can use this template repository as a template by clicking `Use this template` and then `Create a new repository`, click [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) to see a tutorial.
-
-**Otherwise you can:**
-
-
-Download a zip of this repository by pressing the green `Code` button.
-
-
-or
-
-
-Clone the github repo and remove the `.git` (so you can create your own repository):
-
-**On Linux**
-```bash
-git clone --depth 1 --no-single-branch https://github.com/Phillezi/C_Makefile_Template.git
-cd C_Makefile_Template
-rm -rf .git
-```
-
-**On Windows**,
-I havent tried this, but it should work:
-```ps
-git clone --depth 1 --no-single-branch https://github.com/Phillezi/C_Makefile_Template.git
-cd C_Makefile_Template
-del /Q .git
-```
-
-### Linux
-To just get the makefile:
-```bash
-wget https://github.com/Phillezi/C_Makefile_Template/blob/master/makefile
-```
+To compile and run this program you will need:
+- C compiler, GCC
+- SDL2
+- SDL2_ttf
 
 ## Instructions
 ### Windows
