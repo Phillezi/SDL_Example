@@ -4,8 +4,17 @@
 
 To compile and run this program you will need:
 - C compiler, GCC
+- GNU make
 - SDL2
 - SDL2_ttf
+  
+#### Linux using apt package manager (if you are using another package manager you probably know how to install it yourself)
+```bash
+sudo apt update
+sudo apt install build-essential libsdl2-dev libsdl2-ttf-dev -y
+```
+#### Windows
+On windows you can use something like msys2 to simplify the installation [tutorial here](https://www.msys2.org/). Otherwise you can use WSL2 (Windows Subsystem for Linux) [tutorial here](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 ## Instructions
 ### Windows
