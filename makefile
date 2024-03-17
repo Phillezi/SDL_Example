@@ -3,7 +3,8 @@
 # Desc:		A simple Makefile template to build c programs with gcc
 
 CC=gcc
-CFLAGS=-Wall -Wpedantic -lSDL2main -lSDL2 -lSDL2_ttf# Add your library specific flags here
+CFLAGS=-Wall -Wpedantic 
+LIBFLAGS=-lSDL2main -lSDL2 -lSDL2_ttf# Add your library specific flags here
 DEBUG_CFLAGS=-g
 
 SRC_DIR=src
@@ -14,15 +15,17 @@ ifeq ($(OS), Windows_NT)
     # Windows specific
     BIN_EXT =.exe
     CFLAGS +=-lmingw32
-    MKDIR = powershell -Command "if (!(Test-Path -Path $(OUT_DIR) -PathType Container)) { New-Item -ItemType Directory -Path $(OUT_DIR) }"
+    MKDIR = powershell -Command "if (!(Test-Path -Path $(OUT_DIR) -PathType Container)) { New-Item -ItemType Directory -Path $(OUT_DIR) }; if (!(Test-Path -Path $(dir $@) -PathType Container)) { New-Item -ItemType Directory -Path $(dir $@) }"
     RM = del /Q
 else
     # Other OS (meant for Unix based os (OS X and Linux))
     BIN_EXT =
     CFLAGS +=-lm
-    MKDIR = mkdir -p $(OUT_DIR)
+    MKDIR = mkdir -p $(OUT_DIR) $(dir $@)
     RM = rm -rf
 endif
+
+CFLAGS+=$(LIBFLAGS)
 
 # Check if the src directory exists, if not prompt the user to enter the name of their src dir
 ifeq ($(wildcard $(SRC_DIR)),)
@@ -41,7 +44,7 @@ OBJ_FILES := $(patsubst $(SRC_DIR)/%.c,$(OUT_DIR)/%.o,$(SRC_FILES))
 DEP_FILES := $(OBJ_FILES:.o=.d)
 
 $(OUT_DIR)/%.o: $(SRC_DIR)/%.c
-	$(MKDIR) $(dir $@)
+	$(MKDIR) 
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 # Include auto-generated dependency files
