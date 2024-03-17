@@ -62,7 +62,7 @@ CTX *newCTX() {
  * @param pCTX The context of the program.
  */
 void loop(CTX *pCTX) {
-    while(SDL_TRUE) {
+    while(pCTX->state != QUITTING) {
         render(pCTX);
         SDL_Event event;
         if(SDL_WaitEventTimeout(&event, 1000/pCTX->pConfig->fps)) { // this updates whenever it needs to or when the timer runs out (keeping the desired fps). For efficiency set th timeout to something like 500ms
