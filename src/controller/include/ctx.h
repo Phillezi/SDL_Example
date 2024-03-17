@@ -2,8 +2,8 @@
 #define CTX_H
 
 #include <SDL2/SDL.h>
-#include "config.h"
-#include "ui.h"
+#include "../../model/include/config.h"
+#include "../../view/include/ui.h"
 
 typedef enum {
     INITIALIZING, RUNNING, QUITTING
