@@ -16,6 +16,11 @@ sudo apt install build-essential libsdl2-dev libsdl2-ttf-dev -y
 #### Windows
 On windows you can use something like msys2 to simplify the installation [tutorial here](https://www.msys2.org/). Otherwise you can use WSL2 (Windows Subsystem for Linux) [tutorial here](https://learn.microsoft.com/en-us/windows/wsl/install).
 
+### Linux to just get the makefile
+```bash
+wget -O makefile https://raw.githubusercontent.com/Phillezi/SDL_Example/master/makefile
+```
+
 ## Instructions
 ### Windows
 
